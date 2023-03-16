@@ -15,7 +15,7 @@ createAndFetch(
     renderUI(countries); //renders all countries on load
   })
   .catch(err => {
-    alert('failed to fetch data!');
+    alert('Server is offline, please try again later! (or try using vpn if you live in Iran (: )');
   });
 
 async function createAndFetch(url) {
