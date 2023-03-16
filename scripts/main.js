@@ -20,7 +20,10 @@ createAndFetch(
 
 async function createAndFetch(url) {
   //calls for fetch & parses datas
-  const result = await fetch(url, {mode: 'no-cors'});
+  const result = await fetch(url, {headers: {
+   'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PATCH, DELETE, OPTIONS'
+  }});
   countries = await result.json();
 }
 
