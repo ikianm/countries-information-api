@@ -15,16 +15,12 @@ createAndFetch(
     renderUI(countries); //renders all countries on load
   })
   .catch(err => {
-    alert('Server is offline, please try again later! (or try using vpn if you live in Iran (: )');
+   console.log(err);
   });
 
 async function createAndFetch(url) {
   //calls for fetch & parses datas
-  const result = await fetch(url, {mode: 'no-cors',  headers: {
-   'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, PATCH, DELETE, OPTIONS',
-    'Accept': 'application/json'
-  }});
+  const result = await fetch(url, {mode: 'no-cors'});
   countries = await result.json();
 }
 
